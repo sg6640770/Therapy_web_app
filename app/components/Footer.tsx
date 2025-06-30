@@ -1,5 +1,6 @@
 import React from "react";
 import { Mail, Phone } from "lucide-react";
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,7 +8,14 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-8">
         {/* Logo & Contact Info */}
         <div>
-          <img src="/images/final_logo.png" alt="Serena Blake Logo" className="w-28 mb-4" />
+          <Image
+  src="/images/final_logo.png"
+  alt="Serena Blake Logo"
+  width={112}
+  height={112}
+  className="mb-4"
+/>
+
           <div className="text-yellow-300 font-semibold mb-2">⭐ Top Rated</div>
           <div className="space-x-2">
             <a href="#" className="underline">Testimonials</a>

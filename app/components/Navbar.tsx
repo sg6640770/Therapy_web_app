@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react"; // menu icons
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,11 +44,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo + Name */}
           <Link href="/" className="flex items-center space-x-3">
-            <img
-              src="/images/flogo.png"
-              alt="Grow My Therapy Logo"
-              className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full p-1"
-            />
+        <Image
+  src="/images/flogo.png"
+  alt="Grow My Therapy Logo"
+  width={80}
+  height={80}
+  className="bg-white rounded-full p-1"
+/>
+
             <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
               Dr. Serena Blake
             </span>

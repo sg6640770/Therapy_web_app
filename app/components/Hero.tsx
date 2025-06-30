@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Sparkles } from 'lucide-react';
 
+
 const rotatingPhrases = [
   "💫 Greater Purpose in Your Life Direction",
   "🧠 Clarity in Emotional Wellbeing",
