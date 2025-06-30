@@ -20,36 +20,47 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <div className="bg-[#1E4A4A] text-[#CDEDEE] text-lg">
-      <section className="py-16 px-4 max-w-4xl mx-auto" id="faq">
-        <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
-        <div className="space-y-4 ">
-          {faqs.map((faq, index) => (
-            <div key={index} className="border rounded-lg">
-              <button
-                className="w-full text-left p-4 font-semibold flex justify-between items-center"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+    <section className="bg-[#1E4A4A] py-20 px-4 text-[#CDEDEE]" id="faq">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+
+        <div className="space-y-6">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index
+            return (
+              <div
+                key={index}
+                className="border border-[#347c7c] bg-[#1f5a5a] rounded-lg shadow-sm transition-all duration-300"
               >
-                {faq.question}
-                <svg
-                  className={`w-5 h-5 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : 'rotate-0'
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
+                <button
+                  className="w-full p-5 flex items-center justify-between font-semibold text-left text-lg focus:outline-none hover:bg-[#236060] transition"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openIndex === index && (
-                <div className="p-4 text-blue-600">{faq.answer}</div>
-              )}
-            </div>
-          ))}
+                  {faq.question}
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-max-height duration-300 ease-in-out ${
+                    isOpen ? 'max-h-40 p-5' : 'max-h-0 p-0'
+                  }`}
+                >
+                  <p className="text-[#A9F1F1] leading-relaxed">{faq.answer}</p>
+                </div>
+              </div>
+            )
+          })}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
