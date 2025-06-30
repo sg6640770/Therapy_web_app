@@ -24,7 +24,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative h-screen flex items-center justify-center text-white overflow-hidden"
+      className="relative h-screen flex items-center justify-center text-white bg-black overflow-hidden"
       style={{
         backgroundImage: "url('/images/bg-image.png')",
         backgroundSize: 'cover',
@@ -32,41 +32,44 @@ export default function HeroSection() {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-3xl px-6">
-        <p className="text-sm md:text-base text-blue-100 mb-2">
+      <div className="relative z-10 text-center px-6 max-w-4xl">
+        <p className="text-base md:text-lg text-blue-100 mb-3">
           Christian Counseling Services in Maplewood Drive, Los Angeles
         </p>
 
-        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-white drop-shadow-lg">
-          Professional Counseling for Christian Healing and Growth
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 text-white drop-shadow-md">
+          Find Peace, Purpose, and Healing with Dr. Serena Blake
         </h1>
 
-        <p className="text-md md:text-lg text-blue-200 mb-4 leading-relaxed">
-          Begin your journey today towards spiritual growth, deeper relationships,<br className="hidden md:block" />
-          and lasting inner peace.
+        <p className="text-lg md:text-xl text-blue-200 mb-6 leading-relaxed">
+          Begin your journey toward emotional clarity, spiritual alignment, and stronger relationships—starting today.
         </p>
 
-        <p className="font-semibold text-lg text-white mb-2">I want to work with you for...</p>
+        <p className="font-semibold text-lg text-white mb-2">
+          I want to work with you for...
+        </p>
 
-        <p className="text-xl md:text-2xl font-semibold text-blue-300 mb-4 animate-pulse transition duration-500">
+        <p className="text-2xl md:text-3xl font-semibold text-blue-300 mb-6 animate-pulse transition duration-500">
           {rotatingPhrases[currentPhraseIndex]}
         </p>
 
-        <div className="text-sm md:text-base font-medium mb-6 space-x-3 text-yellow-300">
+        <div className="text-sm md:text-base font-medium mb-8 space-x-3 text-yellow-300">
           <span>⭐ Top Rated</span>
           <span className="text-white">• 8+ Years Experience</span>
-          <span className="text-white">• <u>Testimonials</u></span>
-          <span className="text-white">• <u>Media Mentions</u></span>
+          <span className="text-white underline">• Testimonials</span>
+          <span className="text-white underline">• Media Mentions</span>
         </div>
 
         <div className="flex justify-center">
-          <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-xl text-lg font-semibold shadow-lg transition duration-300">
-            <Sparkles className="w-5 h-5" />
-            Start Healing Today
-          </button>
+          <a href="#contact">
+            <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-indigo-600 hover:from-indigo-700 hover:to-teal-600 text-white rounded-full text-lg font-semibold shadow-xl transition duration-300">
+              <Sparkles className="w-5 h-5" />
+              Book a Free Consult
+            </button>
+          </a>
         </div>
       </div>
     </section>
